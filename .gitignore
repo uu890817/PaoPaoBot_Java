@@ -1,0 +1,83 @@
+# Eclipse相關
+.settings/
+.classpath
+.project
+.factorypath
+*.launch
+*.iml
+bin/
+target/
+.settings/
+
+# Maven相關
+log/
+log/*
+*.log
+*.log.*
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar.sha1
+.mvn/wrapper/maven-wrapper.properties
+!.mvn/wrapper/maven-wrapper.properties.sha1
+
+# macOS系統相關
+.DS_Store
+
+# IntelliJ IDEA相關
+.idea/
+
+# Visual Studio Code相關
+.vscode/
+
+# 編輯器備份檔
+*~
+
+# Maven生成的檔案
+META-INF/maven
+META-INF/versions
+target/
+*.jar
+*.war
+*.ear
+
+# IDE臨時檔
+*.swp
+*.bak
+*.tmp
+*.tmp.*
+
+# 日誌檔案
+*.log
+*.log.*
+log/
+logs/
+
+# 編譯的類別檔案
+*.class
+
+# 執行時JAR檔案
+*.jar
+*.war
+*.ear
+
+# 工程快取檔案
+*.classpath
+*.project
+*.cproject
+
+# Maven的Eclipse插件檔案
+.settings/
+
+# 自訂檔案
+/.idea/
+/.classpath
+/.project
+*.env
