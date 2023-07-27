@@ -1,6 +1,7 @@
 package idv.yuge.paopaobot;
 
 import idv.yuge.paopaobot.commands.CommandManager;
+import idv.yuge.paopaobot.create.AutoCheckChannelAlive;
 import idv.yuge.paopaobot.create.CreateCategory;
 import idv.yuge.paopaobot.gson.BotConfig;
 import idv.yuge.paopaobot.runnable.RunnableIp;
@@ -17,9 +18,10 @@ public class PaoPaoBot {
 		PaoPaoFactory.getBot();
 		CommandManager.addCommand();
 		
-		
-		CreateCategory c = new CreateCategory();
-		c.createCategory();
+		AutoCheckChannelAlive a = new AutoCheckChannelAlive();
+		a.check();
+//		CreateCategory c = new CreateCategory();
+//		c.createCategory();
 	}
 
 }
