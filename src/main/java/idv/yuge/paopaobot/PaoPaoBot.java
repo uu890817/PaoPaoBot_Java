@@ -1,20 +1,25 @@
 package idv.yuge.paopaobot;
 
-import idv.yuge.paopaobot.commands.SetEventListener;
-import idv.yuge.paopaobot.util.IpFactory;
+import idv.yuge.paopaobot.commands.CommandManager;
+import idv.yuge.paopaobot.create.CreateCategory;
+import idv.yuge.paopaobot.gson.BotConfig;
+import idv.yuge.paopaobot.runnable.RunnableIp;
 import idv.yuge.paopaobot.util.PaoPaoFactory;
-import net.dv8tion.jda.api.JDA;
+import idv.yuge.paopaobot.util.StaticValue;
 
 public class PaoPaoBot {
 
 	public static void main(String[] args) {
-		JDA bot = PaoPaoFactory.getBot();
+		BotConfig.read();
+		
+		RunnableIp.autoGetIp();
 
-		SetEventListener listener = new SetEventListener(bot);
-		listener.setAllCommand();
-
-		System.out.println(IpFactory.getIp());
-
+		PaoPaoFactory.getBot();
+		CommandManager.addCommand();
+		
+		
+		CreateCategory c = new CreateCategory();
+		c.createCategory();
 	}
 
 }

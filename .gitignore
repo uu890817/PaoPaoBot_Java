@@ -81,3 +81,5 @@ logs/
 /.classpath
 /.project
 *.env
+/config.json
+/config - 複製.json

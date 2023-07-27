@@ -13,11 +13,11 @@ public class IpFactory {
 
     private static String ip = null;
 
-    static {
-        // 使用 ScheduledExecutorService 執行定時任務
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(new AutoGetIp(), 0, 10, TimeUnit.MINUTES); // 每隔 10 分鐘執行一次
-    }
+//    static {
+//        // 使用 ScheduledExecutorService 執行定時任務
+//        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+//        scheduler.scheduleAtFixedRate(new AutoGetIp(), 0, 10, TimeUnit.MINUTES); // 每隔 10 分鐘執行一次
+//    }
     public static String getIp() {
         return ip;
     }
@@ -26,6 +26,36 @@ public class IpFactory {
         IpFactory.ip = ip;
     }
 
+    public String getIpFromApi() {
+    	
+    	try {
+    	URL url = new URL("https://api.ipify.org/");
+        URLConnection connection = url.openConnection();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        StringBuilder response = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            response.append(line);
+        }
+        
+			reader.close();
+			// 解析回應取得外網 IP
+	        String json = response.toString();
+	        IpFactory.setIp(json);
+	        System.out.println("132" + json);
+	        
+	        System.out.println("456" + IpFactory.getIp());
+	        return json;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return null;
+        
+    }
+    
+    
+    
     private static class AutoGetIp implements Runnable {
         @Override
         public void run() {
