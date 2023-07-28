@@ -9,7 +9,21 @@ public class BotConfigBean {
     private long BotOwner;
     private ArrayList<Long> Master;
     private Map<String, Long> ChannelId;
+    private String Ip;
+    private int Port;
     
+	public String getIp() {
+		return Ip;
+	}
+	public void setIp(String ip) {
+		Ip = ip;
+	}
+	public int getPort() {
+		return Port;
+	}
+	public void setPort(int port) {
+		Port = port;
+	}
 	public String getBotToken() {
 		return BotToken;
 	}

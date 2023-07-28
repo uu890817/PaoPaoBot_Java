@@ -22,9 +22,7 @@ public class BotConfig {
 			PrintOut.timePrintln(ConsoleColors.RED_BOLD_BRIGHT, "找不到設定檔");
 		}
 		
-		
-		
-		
+
         try (FileReader fileReader = new FileReader("./config.json")) {
             // 初始化 Gson 物件
             Gson gson = new Gson();
@@ -43,6 +41,11 @@ public class BotConfig {
             System.out.println("BotOwner: " + config.getBotOwner());
             System.out.println("Master: " + config.getMaster());
             System.out.println("ChannelId: " + config.getChannelId());
+            System.out.println("Ip: " + config.getIp());
+            System.out.println("Port: " + config.getPort());
+            
+            StaticValue.setPort(config.getPort());
+            
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JsonSyntaxException e) {
@@ -66,6 +69,7 @@ public class BotConfig {
                 fileWriter.write(updatedJson);
             }
 
+            
             System.out.println("JSON 檔案已更新！");
         } catch (IOException e) {
             e.printStackTrace();
